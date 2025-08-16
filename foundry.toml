@@ -1,0 +1,20 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+remappings = [
+  '@chainlink/contracts/=lib/chainlink/contracts/',
+  '@solmate=lib/solmate/src',
+]
+
+dotenv = ".env"
+
+fs_permissions = [
+    { access = "read", path = "./broadcast" },
+    { access = "read", path = "./reports" },
+]
+
+[fuzz]
+runs = 256
+
+# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
